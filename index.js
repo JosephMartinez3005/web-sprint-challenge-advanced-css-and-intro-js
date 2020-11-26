@@ -246,8 +246,18 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(array){
+  let newArr = []
+  for(let i = 0; i < array.length; i++){
+    let dob = array[i].years.slice(0,4);
+    let year = eval(dob);
+    let dod = array[i].years.slice(6,11)
+    let dodyear = eval(dod)
+    if(year > 1900 && dodyear < 2000){
+      newArr.push(array[i].name)
+    }
+  }
+  return newArr
 }
 
 
